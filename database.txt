@@ -1,0 +1,30 @@
+modules['credentials','lottery','certificates'];
+
+-- users -- 
+id
+name
+email
+password
+
+-- participants --
+id
+name
+email
+
+-- credentials -- 
+checkin_date
+checkin_time
+participant_id
+status
+
+-- events -- 
+id
+name
+initial_date
+final_date
+initial_time
+final_time
+description
+organizer
+local
+local_representant
