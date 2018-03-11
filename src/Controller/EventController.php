@@ -12,9 +12,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        return $this->json([
-            'message' => 'My firts Event create',
-            'path' => 'src/Controller/EventController.php',
+        return $this->render('event/index.html.twig', [
+            'controller_name' => 'EventController',
         ]);
     }
 }
