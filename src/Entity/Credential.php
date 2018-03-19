@@ -22,7 +22,7 @@ class Credential
     private $checkin_date;
     
     /**
-     * @ORM\Column(type="timestamp")
+     * @ORM\Column(type="datetime")
      */
     private $checkin_time;
 
@@ -37,7 +37,7 @@ class Credential
     private $participant_id;
 
     /**
-     * @ORM\Column(type="integer", default="0")
+     * @ORM\Column(type="integer")
      */
     private $status;
 

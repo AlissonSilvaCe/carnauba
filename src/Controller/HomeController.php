@@ -5,15 +5,15 @@ namespace App\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class CredentialController extends Controller
+class HomeController extends Controller
 {
     /**
-     * @Route("/credential", name="credential")
+     * @Route("/", name="home")
      */
     public function index()
     {
-        return $this->render('credential/index.html.twig', [
-            'controller_name' => 'CredentialController',
+        return $this->render('home/index.html.twig', [
+            'controller_name' => 'HomeController',
         ]);
     }
 }

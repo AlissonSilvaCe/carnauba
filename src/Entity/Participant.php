@@ -26,6 +26,16 @@ class Participant
      */
     private $email;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updatedAt;
+
     public function getId()
     {
         return $this->id;
@@ -41,6 +51,16 @@ class Participant
         return $this->email;
     }
 
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    public function getUpdateAt()
+    {
+        return $this->updateAt;
+    }
+
     public function setName($name)
     {
         $this->name = $name;
@@ -49,5 +69,15 @@ class Participant
     public function setEmail($email)
     {
         $this->email = $email;
+    }
+
+    public function setCreatedAt($createdAt)
+    {
+        $this->createAt = $createAt;
+    }
+
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
     }
 }
