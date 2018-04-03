@@ -17,7 +17,7 @@ class Event
     private $id;
 
     /**
-     * @ORM\Column(type="string", lenght="150")
+     * @ORM\Column(type="string", length=150)
      */
     private $name;
 
@@ -50,6 +50,17 @@ class Event
      * @ORM\Column(type="string")
      */
     private $representant_local_name;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updatedAt;
+
 
     public function getId()
     {
@@ -90,6 +101,16 @@ class Event
     {
         return $this->representant_local_name;
     }
+    
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    public function getUpdateAt()
+    {
+        return $this->updateAt;
+    }
 
     public function setName($name)
     {
@@ -124,5 +145,15 @@ class Event
     public function setRepresentant_local_name($representant_local_name)
     {
         $this->representant_local_name = $representant_local_name;
+    }
+
+    public function setCreatedAt($createdAt)
+    {
+        $this->createAt = $createAt;
+    }
+
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
     }
 }
