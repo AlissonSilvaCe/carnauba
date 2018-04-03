@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use App\Entity\Event;
 
 class EventController extends Controller
 {
@@ -12,8 +13,10 @@ class EventController extends Controller
      */
     public function index()
     {
-        return $this->render('event/index.html.twig', [
-            'controller_name' => 'EventController',
-        ]);
+        $events = $this->getDoctrine()
+                       ->getRepository(Event::class)
+                       ->findAll();
+
+        return $this->render('event/index.html.twig', ['events'=> $events]);
     }
 }
