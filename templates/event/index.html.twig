@@ -20,10 +20,10 @@
             <tbody>
                 {% for event in events %}
                     <tr>
-                        <td>{{ events.initial_date }}</td>
-                        <td>{{ events.final_date }}</td>
-                        <td>{{ events.name}}</td>
-                        <td>{{ events.local}}</td>
+                        <td>{{ event.getInitialDate() | date('Y/m/d') }}</td>
+                        <td>{{ event.getFinalDate() | date('Y/m/d') }}</td>
+                        <td>{{ event.name}}</td>
+                        <td>{{ event.local}}</td>
                         <td></td>
                         <td></td>
                     </tr>

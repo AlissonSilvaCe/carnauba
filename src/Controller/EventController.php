@@ -19,6 +19,9 @@ class EventController extends Controller
                        ->getRepository(Event::class)
                        ->findAll();
 
+                       //var_dump($events);
+                       //die;
+
         return $this->render('event/index.html.twig', ['events'=> $events]);
     }
 
