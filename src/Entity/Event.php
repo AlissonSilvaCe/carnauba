@@ -17,22 +17,22 @@ class Event
     private $id;
 
     /**
-     * @ORM\Column(type="string", lenght="150")
+     * @ORM\Column(type="string", length=150)
      */
     private $name;
 
     /**
      * @ORM\Column(type="date")
      */
-    private $initial_date;
+    private $initialDate;
 
     /**
      * @ORM\Column(type="date")
      */
-    private $final_date;
+    private $finalDate;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="text")
      */
     private $description;
 
@@ -44,12 +44,23 @@ class Event
     /**
      * @ORM\Column(type="string")
      */
-    private $organizer_name;
+    private $organizerName;
 
     /**
      * @ORM\Column(type="string")
      */
-    private $representant_local_name;
+    private $representantLocalName;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updatedAt;
+
 
     public function getId()
     {
@@ -61,14 +72,14 @@ class Event
         return $this->name;
     }
 
-    public function getInitial_date()
+    public function getInitialDate()
     {
-        return $this->initial_date;
+        return $this->initialDate;
     }
 
-    public function getFinal_date()
+    public function getFinalDate()
     {
-        return $this->final_date;
+        return $this->finalDate;
     }
 
     public function getDescription()
@@ -81,14 +92,24 @@ class Event
         return $this->local;
     }
 
-    public function getOrganizer_name()
+    public function getOrganizerName()
     {
-        return $this->organizer_name;
+        return $this->organizerName;
     }
 
-    public function getRepresentant_local_name()
+    public function getRepresentantLocalName()
     {
-        return $this->representant_local_name;
+        return $this->representantLocalName;
+    }
+    
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
     }
 
     public function setName($name)
@@ -96,14 +117,14 @@ class Event
         $this->name = $name;
     }
 
-    public function setInitial_date($initial_date)
+    public function setInitialDate($initialDate)
     {
-        $this->initial_date = $initial_date;
+        $this->initialDate = $initialDate;
     }
 
-    public function setFinal_date($final_date)
+    public function setFinalDate($finalDate)
     {
-        $this->final_date = $final_date;
+        $this->finalDate = $finalDate;
     }
 
     public function setDescription($description)
@@ -116,13 +137,23 @@ class Event
         $this->local = $local;
     }
 
-    public function setOrganizer_name($organizer_name)
+    public function setOrganizerName($organizerName)
     {
-        $this->organizer_name = $organizer_name;
+        $this->organizerName = $organizerName;
     }
 
-    public function setRepresentant_local_name($representant_local_name)
+    public function setRepresentantLocalName($representantLocalName)
     {
-        $this->representant_local_name = $representant_local_name;
+        $this->representantLocalName = $representantLocalName;
+    }
+
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+    }
+
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
     }
 }

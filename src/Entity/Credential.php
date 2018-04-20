@@ -19,25 +19,25 @@ class Credential
     /**
      * @ORM\Column(type="date")
      */
-    private $checkin_date;
+    private $checkinDate;
     
     /**
-     * @ORM\Column(type="timestamp")
+     * @ORM\Column(type="time")
      */
-    private $checkin_time;
+    private $checkinTime;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $event_id;
+    private $eventId;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $participant_id;
+    private $participantId;
 
     /**
-     * @ORM\Column(type="integer", default="0")
+     * @ORM\Column(type="integer")
      */
     private $status;
 
@@ -46,24 +46,24 @@ class Credential
         return $this->id;
     }
 
-    public function getCheckin_date()
+    public function getCheckinDate()
     {
-        return $this->checkin_date;
+        return $this->checkinDate;
     }
 
-    public function getCheckin_time()
+    public function getCheckinTime()
     {
-        return $this->checkin_time;
+        return $this->checkinTime;
     }
 
-    public function getEvent_id()
+    public function getEventId()
     {
-        return $this->event_id;
+        return $this->eventId;
     }
 
-    public function getParticipant_id()
+    public function getParticipantId()
     {
-        return $this->participant_id;
+        return $this->participantId;
     }
 
     public function getStatus()
@@ -71,24 +71,24 @@ class Credential
         return $this->status;
     }
 
-    public function setCheckin_date($checkin_date)
+    public function setCheckinDate($checkinDate)
     {
-        $this->checkin_date = $checkin_date;
+        $this->checkinDate = $checkinDate;
     }
 
-    public function setCheckin_time($checkin_time)
+    public function setCheckinTime($checkinTime)
     {
-        $this->checkin_time = $checkin_time;
+        $this->checkinTime = $checkinTime;
     }
 
-    public function setEvent_id($event_id)
+    public function setEventId($eventId)
     {
-        $this->event_id = $event_id;
+        $this->eventId = $eventId;
     }
 
-    public function setParticipant_id($participant_id)
+    public function setParticipantId($participantId)
     {
-        $this->participant_id = $participant_id;
+        $this->participantId = $participantId;
     }
 
     public function setStatus($status)
