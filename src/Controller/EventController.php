@@ -45,9 +45,48 @@ class EventController extends Controller
             $entityManager->persist($event);
             $entityManager->flush();
 
-            die;
+            $this->addFlash('success', 'Evento cadastrado com sucesso!');
+            return $this->redirectToRoute('event-create');
         }
 
         return $this->render('event/create.html.twig', ['form'=> $form->createView()]);
+    }
+
+
+    /**
+     * @Route("/event/update/{id}", name="event-update")
+     */
+    public function update(Request $request, Event $id)
+    {
+        $form = $this->createForm(EventType::class, $id);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid() ){
+
+            $event = $form->getData();
+            $event->setUpdatedAt(new \DateTime("now", new \DateTimeZone("America/Sao_Paulo")));
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->merge($event);
+            $entityManager->flush();
+
+            $this->addFlash('success', 'Evento alterado com sucesso!');
+            return $this->redirectToRoute('event-update',['id' => $event->getId()]);
+        }
+
+        return $this->render('event/update.html.twig', ['form'=> $form->createView()]);
+    }
+
+    /**
+     * @Route("/event/delete/{id}", name="event-delete")
+     */
+    public function delete(Event $event)
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($event);
+        $entityManager->flush(); 
+
+        $this->addFlash('success', 'Evento excluido com sucesso!');
+        return $this->redirectToRoute('event');
     }
 }

@@ -20,7 +20,6 @@ class EventType extends AbstractType
             ->add('local', null, ['label'=> 'Local: '])
             ->add('organizerName', null, ['label'=> 'Organizador: '])
             ->add('representantLocalName', null, ['label'=> 'Representante local: '])
-            ->add('save', SubmitType::class, array('label' => 'Salvar'))
         ;
     }
 

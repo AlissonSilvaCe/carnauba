@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Carnaúba | Controle de Eventos{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+
+{% include 'includes/message.html.twig' %}
+
+    <br>
+    <h1>Controle de Usuários</h1>
+    <a href="/"><button>Início</button></a>
+    <a href="{{ path('user-create') }}"><button>Incluir</button></a>
+    <table>
+            <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Criado em</th>
+                        <th colspan="2">Ações</th>
+                    </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.getUserName() }}</td>
+                        <td>{{ user.getEmail() }}</td>
+                        <td><a href="{{ path('user-update', {'id': user.getId() } ) }}"><button>Editar</button></a></td>
+                        <td><a href="{{ path('user-delete', {'id': user.getId() } ) }}"><button>Excluir</button></a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+    </table>
+
+</div>
+{% endblock %}
