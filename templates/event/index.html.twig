@@ -4,32 +4,68 @@
 
 {% block body %}
 
-<div class="example-wrapper">
-    <h1>Controle de Eventos</h1>
-    <a href="/event/create">Incluir</a>
-    <table>
-            <thead>
-                    <tr>
-                        <th>Início</th>
-                        <th>Fim</th>
-                        <th>Nome</th>
-                        <th>Local</th>
-                        <th colspan="2">Ações</th>
-                    </tr>
-            </thead>
-            <tbody>
-                {% for event in events %}
-                    <tr>
-                        <td>{{ event.getInitialDate() | date('Y/m/d') }}</td>
-                        <td>{{ event.getFinalDate() | date('Y/m/d') }}</td>
-                        <td>{{ event.name}}</td>
-                        <td>{{ event.local}}</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-    </table>
+{% include 'includes/message.html.twig' %}
 
+<div class="row">
+
+<section class="content-header">
+    <h1>
+        Carnaúba  <small>Sistema de apoio a eventos</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-home"></i> Início</a></li>
+        <li class="active">Eventos</li>
+    </ol>
+</section>
+<br>
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                  <h3 class="box-title">Controle de eventos</h3>
+                  <a class="pull-right" href="/event/create"><button class="btn btn-block btn-primary"><i class="fa fa-fw fa-plus"></i>Inserir</button></a>
+            </div>
+                <div class="box-body">
+
+                <table id="example2" class="table table-bordered table-hover">
+                    <thead>
+                            <tr>
+                                <th>Início</th>
+                                <th>Fim</th>
+                                <th>Nome</th>
+                                <th>Local</th>
+                                <th class="text-center">Editar</th>
+                                <th class="text-center">Excluir</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+                        {% for event in events %}
+                            <tr>
+                                <td>{{ event.getInitialDate() | date('d/m/Y') }}</td>
+                                <td>{{ event.getFinalDate() | date('d/m/Y') }}</td>
+                                <td>{{ event.getName() }}</td>
+                                <td>{{ event.getLocal()}}</td>
+                                <td class="text-center"><a href="{{ path('event-update', {'id': event.getId() } ) }}"><button class="btn btn-social-icon btn-warning btn-sm"><i class="fa fa-fw fa-edit"></i></button></a></td>
+                                <td class="text-center"><a href="{{ path('event-delete', {'id': event.getId() } ) }}"><button class="btn btn-social-icon btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i></button></a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+
+                </div>
+        </div>
+    </div>
 </div>
+<script>
+  $(function () {
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : false,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
+  })
+</script>
 {% endblock %}

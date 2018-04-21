@@ -1,28 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Sistema de apoio a eventos | Carnaúba{% endblock %}
-
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Sistema de apoio a eventos | Carnaúba</h1>
+<section class="content-header">
+    <h1>
+        Carnaúba  <small>Sistema de apoio a eventos</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-home"></i> Início</a></li>
+        <li class="active">Painel inicial</li>
+    </ol>
+</section>
 
-    Funcionalidades iniciais:
+<div class="container">
+
+    <div class="col-md-12">
+            <h1>Funcionalidades iniciais:</h1>
+    </div>
+    
     <ul>
         <li><code>admin: checkin de participantes</code></li>
         <li><code>admin: sorteio eletrônico</code></li>
         <li><code>public: emissão de certificados</code></li>
     </ul>
-
-    Acessar módulos:
-     <ul>
-        <li><a href="/event">Eventos</a></li>
-        <li><a href="/participant">Participantes</a></li>
-        <li><a href="/credential">Credenciais</a></li>
-    </ul>
+    
 </div>
 {% endblock %}

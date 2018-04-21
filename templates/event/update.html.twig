@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Carnaúba | Controle de Eventos{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+
+{% include 'includes/message.html.twig' %}
+    
+    <h1>Editar Evento</h1>
+    
+    <hr></hr>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+   
+    <a href="/event"><button type="button">Voltar</button></a>
+    {{ form_end(form) }}
+
+</div>
+{% endblock %}
